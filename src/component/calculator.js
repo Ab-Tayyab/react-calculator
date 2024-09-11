@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import "./style.css"
+import "./calculator.css"
 
-const Keypad = () => {
+const Calculator = () => {
     const [value, setValue] = useState("")
 
     const getData = (e) => {
@@ -79,4 +79,4 @@ const Keypad = () => {
     )
 }
 
-export default Keypad
+export default Calculator

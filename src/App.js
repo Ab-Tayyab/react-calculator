@@ -1,12 +1,12 @@
-import React from 'react'
-import Keypad from './component/keypad'
+import React from "react";
+import Calculator from "./component/calculator";
 
 const App = () => {
   return (
     <>
-      <Keypad />
+      <Calculator />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
