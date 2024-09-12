@@ -1,46 +1,39 @@
-import React, { useState } from 'react'
-import "./calculator.css"
+import React, { useState } from 'react';
+import "./calculator.css";
 
 const Calculator = () => {
-    const [value, setValue] = useState("")
+    const [value, setValue] = useState("");
 
     const getData = (e) => {
-        setValue(value.concat(e.target.name))
-    }
+        setValue(value.concat(e.target.name));
+    };
 
     const clearData = () => {
-        setValue("")
-    }
+        setValue("");
+    };
 
     const removeData = () => {
-        setValue(value.slice(0, -1))
-    }
+        setValue(value.slice(0, -1));
+    };
 
     const calculateData = () => {
-        setValue(eval(value))
-    }
+        try {
+            setValue(eval(value).toString());
+        } catch (error) {
+            setValue("Error");
+        }
+    };
+
     return (
         <>
-            <div style={{
-                width: "440px",
-                padding: "10px",
-                margin: "auto",
-                marginTop: "100px",
-                boxShadow: "2px 4px 6px black",
-                background: "black"
-            }}>
+            <div className="calculator-container">
                 <form action="">
-                    <input type="text" value={value} style={{
-                        width: "411px",
-                        height: "60px",
-                        background: "black",
-                        color: "white",
-                        fontSize: "30px",
-                        textAlign: "right",
-                        paddingRight: "10px",
-                        margin: "10px 6px 10px 6px",
-                        border: "1px solid white"
-                    }} />
+                    <input 
+                        type="text" 
+                        value={value} 
+                        className="calculator-input"
+                        readOnly 
+                    />
                 </form>
                 <div className='parent-child'>
                     <button id='style' onClick={clearData} style={{
@@ -76,7 +69,7 @@ const Calculator = () => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Calculator
+export default Calculator;
